@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ShiftPilot</title>
+</head>
+<body>
+    <h1>ShiftPilot</h1>
+    <div id="stats">
+        <div class="card">Total Shifts: <span id="totalShifts">0</span></div>
+        <div class="card">Busiest Day: <span id="busiestDay">-</span></div>
+        <div class="card">Most Scheduled: <span id="mostScheduled"></span></div>
+    </div>
+    <form>
+        <label for="staffName">Staff Name</label> 
+        <input type="text" id="staffName"><br>
+
+        <label for="day">Day</label>
+        <select id="day">
+            <option value="">-- Select Day --</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+
+        <label for="time">Time</label> 
+        <input type="time" id="time"><br>
+
+        <button type="submit">Add Shift</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Staff Name</th>
+                <th>Day</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody id="scheduleTable">
+
+        </tbody>
+    </table>
+
+    <script src="index.js"></script>
+</body>
+</html>
