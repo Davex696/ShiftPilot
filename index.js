@@ -32,6 +32,7 @@ Shifts.push(shift);
 displayShifts();
 console.log(Shifts);
 updateStats();
+updateChart();
 
 
 staffNameInput.value = "";
@@ -58,6 +59,7 @@ function deleteShift(index){
     Shifts.splice(index, 1);
     displayShifts();
     updateStats()
+    updateChart();
 }
 function updateStats(){
     let busiestDay = "";
@@ -103,6 +105,39 @@ Totalshifts.textContent = Shifts.length;
 Busiestday.textContent = busiestDay;
 Mostscheduled.textContent = mostScheduled;
 
-
-
 }
+
+function updateChart(){
+    const chart = document.getElementById("chart")
+    chart.innerHTML = ""
+
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+
+    const dayCounts = {};
+    Shifts.forEach(function(shift){
+        if(dayCounts[shift.day] === undefined){
+            dayCounts[shift.day] = 1;
+        }
+        else{
+            dayCounts[shift.day]++;
+        }
+    });
+
+    const max = Math.max(...Object.values(dayCounts), 1);
+
+    days.forEach(function(day){
+        const count = dayCounts[day] || 0;
+        const barHeight = (count / max) * 150;
+
+        chart.innerHTML +=`
+        <div class ="bar-group">
+            <div class="bar-count"> ${count}</div>
+            <div class="bar" style ="height: ${barHeight}px"></div>
+            <div class="bar-label"> ${day.slice(0, 3)}</div>
+        </div>`;
+
+    });
+}
+
+
