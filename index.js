@@ -33,12 +33,15 @@ displayShifts();
 console.log(Shifts);
 updateStats();
 updateChart();
-
+  localStorage.setItem("shifts", JSON.stringify(Shifts));
 
 staffNameInput.value = "";
 dayInput.value = "";
 timeInput.value = "";
 });
+function logout(){
+    window.location.href = "index.html"
+}
 
 function displayShifts(){
     const scheduleTable = document.getElementById("scheduleTable");
@@ -52,6 +55,7 @@ function displayShifts(){
             <td><button onclick="deleteShift(${index})">Delete</button></td>
         </tr>`
 
+
     })
 }
 
@@ -60,6 +64,7 @@ function deleteShift(index){
     displayShifts();
     updateStats()
     updateChart();
+    localStorage.setItem("shifts", JSON.stringify(Shifts));
 }
 function updateStats(){
     let busiestDay = "";
@@ -131,13 +136,19 @@ function updateChart(){
         const barHeight = (count / max) * 150;
 
         chart.innerHTML +=`
-        <div class ="bar-group">
-            <div class="bar-count"> ${count}</div>
+        <div class ="bar_group">
+            <div class="bar_count"> ${count}</div>
             <div class="bar" style ="height: ${barHeight}px"></div>
-            <div class="bar-label"> ${day.slice(0, 3)}</div>
+            <div class="bar_label"> ${day.slice(0, 3)}</div>
         </div>`;
 
     });
 }
-
+const saved = JSON.parse(localStorage.getItem("shifts")) || [];
+saved.forEach(function(shift) {
+    Shifts.push(shift);
+});
+displayShifts();
+updateStats();
+updateChart();
 

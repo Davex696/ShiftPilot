@@ -40,6 +40,22 @@ header h1 {
     color: var(--accent);
 }
 
+.logout_btn {
+    background-color: rgba(255, 79, 106, 0.1);
+    border: 1px solid rgba(255, 79, 106, 0.2);
+    color: var(--danger);
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    
+}
+
+.logout_btn:hover{
+    background: rgba(255, 79, 106, 0.25);
+}
+
 main {
     max-width: 1100px;
     margin: 0 auto;
@@ -72,7 +88,7 @@ main {
     margin-top: 8px;
 }
 
-.card-label {
+.card_label {
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -197,7 +213,7 @@ tbody button:hover  {
     padding: 28px;
 }
 
-.section-label {
+.section_label {
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -213,7 +229,7 @@ tbody button:hover  {
     padding-top: 20px;
 }
 
-.bar-group {
+.bar_group {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,15 +245,47 @@ tbody button:hover  {
     transition: height 0.3s ease;
 }
 
-.bar-count {
+.bar_count {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--accent);
 }
 
-.bar-label {
+.bar_label {
     font-size: 0.7rem;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.highlighted {
+    background: rgba(79, 138, 255, 0.15);
+    border-left: 3px solid var(--accent);
+}
+
+.login_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login_wrapper form {
+    width: 380px;
+    padding: 40px;
+}
+
+.login_wrapper form h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+#errorMsg {
+    color: var(--danger);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 8px;
 }
