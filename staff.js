@@ -1,3 +1,4 @@
+//retrieving the shift elemets from the local storage
 const shifts = JSON.parse(localStorage.getItem("shifts")) || [];
 
 function displayShifts(){

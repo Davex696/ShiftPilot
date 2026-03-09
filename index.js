@@ -66,6 +66,8 @@ function deleteShift(index){
     updateChart();
     localStorage.setItem("shifts", JSON.stringify(Shifts));
 }
+
+//FUNCTION FOR STATS
 function updateStats(){
     let busiestDay = "";
     let maxCount = 0;
@@ -111,7 +113,7 @@ Busiestday.textContent = busiestDay;
 Mostscheduled.textContent = mostScheduled;
 
 }
-
+//Funcion for creating the chart
 function updateChart(){
     const chart = document.getElementById("chart")
     chart.innerHTML = ""
@@ -144,6 +146,8 @@ function updateChart(){
 
     });
 }
+
+//saving the tabke items locally
 const saved = JSON.parse(localStorage.getItem("shifts")) || [];
 saved.forEach(function(shift) {
     Shifts.push(shift);
