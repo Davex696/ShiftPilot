@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SHIFTPILOT</title>
+</head>
+<body>
+    <header>
+            <button class="logout_btn" onclick="logout()">Logout</button>
+    </header>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">ShiftPilot</div>
+        <nav>
+            <a href="#" class="nav-item active" data-view="schedule">
+                <span class="nav-icon">📅</span> Schedule
+            </a>
+            <a href="#" class="nav-item" data-view="team">
+                <span class="nav-icon">👥</span> Team
+            </a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="avatar">AD</div>
+            <div>
+                <div class="user-name">Admin</div>
+                <div class="user-role">Manager</div>
+            </div>
+            <cutton class="logout-btn" onclick="logout()">logout⏻</cutton>
+        </div>
+    </aside>
+    
+
+    <main class="main">
+
+        <section id="view-schedule" class="view active">
+            <div class="view-header">
+                <h1>Schedule</h1>
+                <button class="btn-primary" id="openAddShift">+ Add Shift</button>
+            </div>
+            <div id="scheduleGrid"></div>
+        </section>
+        <section id="view-team" class="view">
+            <div class="view-header">
+                <h1>Team</h1>
+                <button class="btn-primary" id="openAddMember">+ Add Member</button>
+            </div>
+            <table class="team-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="teamTable"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="shiftModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add Shift</h2>
+                <button class="modal-close" id="closeShift">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label>Staff Member</label>
+                <select id="shiftStaff"></select>
+                <label>Day</label>
+                <select id="shiftDay">
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+                <label>Start Time</label>
+                <input type="time" id="shiftStart">
+                <label>End Time</label>
+                <input type="time" id="shiftEnd">
+                <button class="btn-primary" id="saveShift">Save Shift</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="memberModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add Member</h2>
+                <button class="modal-close" id="closeMember">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label>Full Name</label>
+                <input type="text" id="memberName" placeholder="e.g. John Doe">
+                <label>Role</label>
+                <input type="text" id="memberRole" placeholder="eg. Developer">
+                <button class="btn-primary" id="saveMember">Save Member</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
