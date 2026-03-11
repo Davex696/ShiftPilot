@@ -121,6 +121,11 @@ document.getElementById('saveShift').addEventListener('click', function() {
     const start = document.getElementById('shiftStart').value;
     const end = document.getElementById('shiftEnd').value;
 
+if (start >= end) {
+    alert('End time must be later than start time');
+    return;
+}
+
     if (!staffId || !day || !start || !end) {
         alert('Please fill in all fields');
         return;
