@@ -1,0 +1,26 @@
+{
+  "name": "shiftpilot-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Davex696: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@github.com/Davex696/ShiftPilot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Davex696/ShiftPilot/issues"
+  },
+  "homepage": "https://github.com/Davex696/ShiftPilot#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "json-server": "^1.0.0-beta.13"
+  }
+}

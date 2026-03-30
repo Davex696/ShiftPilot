@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ShiftPilot — My Schedule</title>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">ShiftPilot</div>
+        <nav>
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">📅</span> My Schedule
+            </a>
+         <a href="#" class="nav-item" data-view="complaint">
+         <span class="nav-icon">📋</span> Complaint
+         </a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="avatar">ST</div>
+            <div>
+                <div class="user-name">Staff</div>
+                <div class="user-role">Team Member</div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <section class="view active">
+            <div class="view-header">
+                <h1>My Schedule</h1>
+                <button class="btn-danger" onclick="logout()">Logout</button>
+            </div>
+            <div id="staffSchedule"></div>
+        </section>
+    <!-- Complaint Section -->
+    <section style="margin-top:32px" id="view-complaint" class="view">
+        <div class="view-header">
+            <h1>Report a Problem</h1>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 4px rgba(0,0,0,0.07)">
+            <label>Select Shift</label>
+            <select id="complaintShift" style="width:100%; padding:11px 14px; border:1px solid #e0e4ea; border-radius:8px; margin-bottom:14px; font-size:0.9rem"></select>
+            <label>Message</label>
+            <textarea id="complaintMessage" placeholder="Describe your problem..." style="width:100%; padding:11px 14px; border:1px solid #e0e4ea; border-radius:8px; font-size:0.9rem; font-family:'Segoe UI',sans-serif; height:100px; resize:vertical; margin-bottom:14px"></textarea>
+            <button class="btn-primary" onclick="submitComplaint()">Submit Complaint</button>
+        </div>
+    </section>
+</main>
+
+    <script src="staff.js"></script>
+</body>
+</html>
